@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Soft Landing Page by Tooplate</title>
+	<!--
+
+    Template 2106 Soft Landing
+
+	http://www.tooplate.com/view/2106-soft-landing
+
+    -->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+
+
+
+
+
+     <style>
+          body {
+              background-color: #eef8e6;
+              font-family: Arial, sans-serif;
+          }
+          
+          
+          
+          .letterText {
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+              text-align: center;
+              font-size: 24px;
+              margin-top: 20px;
+          }
+  
+          #guessedLetters {
+              margin-top: 10px;
+              font-size: 18px;
+              text-align: center;
+              color:#eef8e6
+          }
+      </style>
+
+
+
+
+</head>
+<body>
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Jans Steam code riddle </a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li><a href="#home" class="smoothScroll">Input</a></li>
+                         <li><a href="#feature" class="smoothScroll">Spielweise</a></li>
+                         <li><a href="#about" class="smoothScroll">About us</a></li>
+                         <li><a href="#pricing" class="smoothScroll">Klick mich nich</a></li>
+                         <li><a href="#contact" class="smoothScroll">Code Checker</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#">hehe random text<span>emailaddresse@email.co</span></a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="home" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <div class="home-info">
+                              <h3>Löse die Rätzel um dein code zu verfollstädnigen!</h3>
+                              <h1>NUR DU KANNST ES SCHAFEN !!!</h1>
+                              <form action="" method="get" class="online-form">
+                                   <input type="text" name="email" class="form-control" placeholder="Enter Awnser" id="guessInput" autocomplete="off">
+                                   <button type="submit" class="form-control" id="guessButton" onclick="guessLetter()">AB DAMIT</button>
+                                   
+                                   <div class="letterText" id="letterText"></div>
+                                   <div id="guessedLetters"></div>
+                                   <button id="resetButton" onclick="resetGame()">Reset</button>
+
+                              </form>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+
+
+
+
+
+
+
+     <script>
+          var code = "QJZNX-I39MK-BDYNZ";
+          var currentLetterIndex = 0;
+          var guessedLetters = [];
+          var letterText = document.getElementById("letterText");
+          var guessInput = document.getElementById("guessInput");
+          var guessedLettersDisplay = document.getElementById("guessedLetters");
+        
+          var texts = [
+            "Was ist dein lieblings Teilbereich der Physik dessen Lernkurve wie eine Achterbahn aussieht?",
+            "I am a unit of energy, that is true,<br>Equal to one watt-second, too.<br>When power and time combine their force,<br>You'll find me as the answer, of course.<br>What am I?",
+            "Im Musik-Express so wild<br>Ein Effekt den jeder grillt?? xD<br>Press mich gegen den Sitz und sag es laut<br>Doch bin ich nur scheinbar, nicht echt , versaut<br>Was bin ich?",
+            "Ich bin die Einheit der Kraft, bekannt und wertvoll,<br>Gemessen und genutzt für Kräfte, ganz toll.<br>Doch was mein Erfinder über den Auftrieb sprach,<br>Entpuppt sich als Stolperstein, eine missglückte Sach'.<br>Was bin ich?",
+            "Text for letter X",
+            "Text for letter -",
+            "Text for letter J",
+            "Text for letter 3",
+            "Text for letter 4",
+            "Text for letter M",
+            "Text for letter F",
+            "Text for letter -",
+            "Text for letter G",
+            "Text for letter H",
+            "Text for letter X",
+            "Text for letter T",
+            "Text for letter Z"
+          ];
+        
+          // Retrieve the game state from localStorage if available
+          var gameState = localStorage.getItem("letterGuessingGame");
+          if (gameState) {
+            gameState = JSON.parse(gameState);
+            currentLetterIndex = gameState.currentLetterIndex;
+            guessedLetters = gameState.guessedLetters;
+            letterText.innerHTML = texts[currentLetterIndex];
+            guessedLettersDisplay.textContent = "Guessed letters: " + guessedLetters.join(", ");
+          } else {
+            // Initialize the game with the first letter
+            letterText.innerHTML = texts[currentLetterIndex];
+          }
+        
+          function guessLetter() {
+            var guess = guessInput.value.toUpperCase();
+            if (guess.length === 1) {
+              if (code[currentLetterIndex] === guess) {
+                guessedLetters.push(guess);
+                currentLetterIndex++;
+                guessInput.value = "";
+        
+                if (currentLetterIndex === code.length) {
+                  letterText.textContent = "Congratulations! You guessed the entire code.";
+                  guessedLettersDisplay.textContent = "Guessed letters: " + guessedLetters.join(", ");
+                  downloadTextFile();
+                } else {
+                  letterText.innerHTML = texts[currentLetterIndex];
+                  guessedLettersDisplay.textContent = "Guessed letters: " + guessedLetters.join(", ");
+                }
+        
+                // Save the game state to localStorage
+                var gameState = {
+                  currentLetterIndex: currentLetterIndex,
+                  guessedLetters: guessedLetters
+                };
+                localStorage.setItem("letterGuessingGame", JSON.stringify(gameState));
+              } else {
+                alert("Wrong guess. Try again.");
+              }
+            } else {
+              alert("Please enter a single letter or number.");
+            }
+          }
+          function downloadTextFile() {
+            var fileUrl = "Jan BDAY.txt"; // Replace with the actual file URL
+            var fileName = "Awnsers und co.txt";
+        
+            var element = document.createElement("a");
+            element.setAttribute("href", fileUrl);
+            element.setAttribute("download", fileName);
+            element.style.display = "none";
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+          }
+        
+          function resetGame() {
+            currentLetterIndex = 0;
+            guessedLetters = [];
+            guessInput.value = "";
+            letterText.innerHTML = texts[currentLetterIndex];
+            guessedLettersDisplay.textContent = "";
+            localStorage.removeItem("letterGuessingGame");
+          }
+        </script>
+        
+
+
+
+
+
+
+     <!-- FEATURE -->
+     <section id="feature" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <div class="section-title">
+                              <h1>Wie funktioniert das hier lol</h1>
+                         </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <ul class="nav nav-tabs" role="tablist">
+                              <li class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab">Steam</a></li>
+
+                              <li><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">Wie mans spielt</a></li>
+
+                              <li><a href="#tab03" aria-controls="tab03" role="tab" data-toggle="tab">Beispiel</a></li>
+                         </ul>
+
+                         <div class="tab-content">
+                              <div class="tab-pane active" id="tab01" role="tabpanel">
+                                   <div class="tab-pane-item">
+                                        <h2>Steam Guthaben Karte</h2>
+                                        <p>Ich habe eine Steam Guthaben Karte für DICH gekauft jedoch bekommst du sie net lol.</p>
+                                   </div>
+                                   <div class="tab-pane-item">
+                                        <h2>WTF WARUM NICHT??</h2>
+                                        <p>Keine Sorge du bekommst sie in Form von Anfangsbuchstaben von Wörtern die du durch Rätsel erraten musst. </p>
+                                   </div>
+                              </div>
+
+
+                              <div class="tab-pane" id="tab02" role="tabpanel">
+                                   <div class="tab-pane-item">
+                                        <h2>Rätsel Raten</h2>
+                                        <p>Du hast 3 Typen von Rätseln: 1. Physik Rätsel 2. xxx Rätsel 3. xxx Rätsel</p>
+                                   </div>
+                                   <div class="tab-pane-item">
+                                        <h2>Why?</h2>
+                                        <p>Ein Steam code ist ungefähr so aufgebaut: EDSWX-J34MF-GHXTZ die ersten 5 Buchstaben findest du durch die Lösungen der Physik Rätsel Raus die zweiten 5 Buchstaben durch die xxx Rätseln usw</p>
+                                   </div>
+                                   <div class="tab-pane-item">
+                                        <h2>HÄÄÄÄÄÄ LOLOL </h2>
+                                        <p>Meine unfähigkeit zu programmieren zwingt mich zum erklären sorry xD. Die antworten die du aus den 3 verschieden Rätsel Typen bekommst sind immer Wörter und von den Wörtern der Erste Buchstabe ist gesucht. Btw du kannst unten deinen Bisherigen code checken</p>
+                                   </div>
+                              </div>
+
+                              <div class="tab-pane" id="tab03" role="tabpanel">
+                                   <div class="tab-pane-item">
+                                        <h2>erstes Rätsel</h2>
+                                        <p>Was ist gründ und dreieckig? Antwort: Dreieck. </p>
+                                   </div>
+                                   <div class="tab-pane-item">
+                                        <h2>und jetzt?</h2>
+                                        <p>jetzt hast du den ersten buchstaben für deinen code: DXXXX-XXXX-XXXX</p>
+                                   </div>
+                              </div>
+                         </div>
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="feature-image">
+                              <img src="images/feature-mockup.png" class="img-responsive" alt="Thin Laptop">                             
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <div class="section-title">
+                              <h1>3 idioten auf dem Kontrabas</h1>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <img src="images/team-image1.jpg" class="img-responsive" alt="Andrew Orange">
+                              <div class="team-info team-thumb-up">
+                                   <h2>Dummer Typ</h2>
+                                   <small>Wasn opfa</small>
+                                   <p>Hi ich bin nh dummer typ der hier so bisle rumchillt weil Luis mich eif hier mit rein gezogen hat</p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <div class="team-info team-thumb-down">
+                                   <h2>Katharina SpermAngel</h2>
+                                   <small>Hausmeisterin</small>
+                                   <p>ich bin keine Hausmeisterin ich bin eine Queen. period. SLAYYY</p>
+                              </div>
+                              <img src="images/team-image2.jpg" class="img-responsive" alt="Catherine Soft">
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="team-thumb">
+                              <img src="images/team-image3.jpg" class="img-responsive" alt="Jack Wilson">
+                              <div class="team-info team-thumb-up">
+                                   <h2>Jack Wilson</h2>
+                                   <small>CEO / Founder</small>
+                                   <p>Mein Name ist Jack Wilson eine fiktive person geschafen für anderer faulheit. Luis seiner Faulheit zu grunde existiere ich hier ohne grund und wesen aber jedoch mit grammatikalenischen fehlern.</p>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TESTIMONIAL -->
+     <section id="testimonial" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="testimonial-image"></div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                         <div class="testimonial-info">
+                              
+                              <div class="section-title">
+                                   <h1>TIPPS FALLS MEINE WEIRDEN RÄTSEL ZU WEIRD SIND</h1>
+                              </div>
+
+                              <div class="owl-carousel owl-theme">
+                                   <div class="item">
+                                        <h3>Man siehts vlt nicht aber du kannst hier so durch swipem mit deiner Maus also drauf klicken und nach rechts swipen :)</h3>
+                                        <div class="testimonial-item">
+                                             <img src="images/tst-image1.jpg" class="img-responsive" alt="Michael">
+                                             <h4>HungrigerHugo</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>AHHH WER HAT DIR GESAGT DAS MAN DAS HIER SLIDEN KANN WTFFF VOM DESIGN HER HAB ICH DAS EXTRA UNKENNTLICH GEMACHT GRRRR</h3>
+                                        <div class="testimonial-item">
+                                             <img src="images/tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Frau PP Paranoide Person</h4>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="item">
+                                        <h3>AHHH WER HAT DIR GESAGT DAS MAN DAS HIER SLIDEN KANN WTFFF VOM DESIGN HER HAB ICH DAS EXTRA UNKENNTLICH GEMACHT GRRRR</h3>
+                                        <div class="testimonial-item">
+                                             <img src="images/tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Frau PP Paranoide Person</h4>
+                                        </div>
+                                   </div>
+
+
+                                   <div class="item">
+                                        <h3>LOLOLOLLOLOLLOL JAN HOFFE DU SIEHST DAS SONST IST DAS HIER BISLE UNNÖTIG LOLOOLOLOL </h3>
+                                        <div class="testimonial-item">
+                                             <img src="images/tst-image3.jpg" class="img-responsive" alt="Monica">
+                                             <h4>Wer das liest ist dumm</h4>
+                                        </div>
+                                   </div>
+                              </div>
+
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+
+
+     <!-- CONTACT -->
+     <section id="contact" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-offset-1 col-md-10 col-sm-12">
+                         <form id="contact-form" role="form" action="" method="post">
+                              <div class="section-title">
+                                   <h1>Say hello to us</h1>
+                              </div>
+
+                              <div class="col-md-4 col-sm-4">
+                                   <input type="text" class="form-control" placeholder="Full name" name="name" required="">
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                   <input type="email" class="form-control" placeholder="Email address" name="email" required="">
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                                   <input type="submit" class="form-control" name="send message" value="Send Message">
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                   <textarea class="form-control" rows="8" placeholder="Your message" name="message" required=""></textarea>
+                              </div>
+                         </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>       
+
+
+     <!-- FOOTER -->
+     <footer id="footer" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="copyright-text col-md-12 col-sm-12">
+                         <div class="col-md-6 col-sm-6">
+                              <p>Copyright &copy; 2018 Company Name - Design:
+                				<a rel="nofollow" href="http://tooplate.com">Tooplate</a></p>
+                         </div>
+
+                         <div class="col-md-6 col-sm-6">
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>
