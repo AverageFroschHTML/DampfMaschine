@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<title>Soft Landing Page by Tooplate</title>
+	<title>Bist du eine Wahre Dampf Maschine??</title>
 	<!--
 
     Template 2106 Soft Landing
@@ -55,7 +55,7 @@
       </style>
 
 
-
+<link rel="icon" href="https://cdn.prod.www.spiegel.de/images/74f23ecb-0001-0004-0000-000001279606_w1200_r1.33_fpx50_fpy41.34.jpg">
 
 </head>
 <body>
@@ -91,8 +91,8 @@
                          <li><a href="#home" class="smoothScroll">Input</a></li>
                          <li><a href="#feature" class="smoothScroll">Spielweise</a></li>
                          <li><a href="#about" class="smoothScroll">About us</a></li>
-                         <li><a href="#pricing" class="smoothScroll">Klick mich nich</a></li>
-                         <li><a href="#contact" class="smoothScroll">Ka was </a></li>
+                         <li onclick="PRANKHIMJOHN()"><a href="#pricing" class="smoothScroll">Klick mich nich</a></li>
+                         <li><a href="#contact" class="smoothScroll">EasterEgg</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#">hehe random text<span>emailaddresse@email.co</span></a></li>
@@ -138,6 +138,8 @@
 
 
      <script>
+          function PRANKHIMJOHN(){document.location.href="hehe.html";}
+          function PRANKHIMJOHN2(){document.location.href="hehe2.html";}
           var code = "QJZNX-I39MK-BDYNZ";
           var currentLetterIndex = 0;
           var guessedLetters = [];
@@ -146,26 +148,25 @@
           var guessedLettersDisplay = document.getElementById("guessedLetters");
         
           var texts = [
-            "Was ist dein lieblings Teilbereich der Physik dessen Lernkurve wie eine Achterbahn aussieht?",
-            "I am a unit of energy, that is true,<br>Equal to one watt-second, too.<br>When power and time combine their force,<br>You'll find me as the answer, of course.<br>What am I?",
-            "Im Musik-Express so wild<br>Ein Effekt den jeder grillt?? xD<br>Press mich gegen den Sitz und sag es laut<br>Doch bin ich nur scheinbar, nicht echt , versaut<br>Was bin ich?",
-            "Ich bin die Einheit der Kraft, bekannt und wertvoll,<br>Gemessen und genutzt für Kräfte, ganz toll.<br>Doch was mein Erfinder über den Auftrieb sprach,<br>Entpuppt sich als Stolperstein, eine missglückte Sach'.<br>Was bin ich?",
-            "Ich bin unsichtbar, doch durchdringe ich viel,<br>In Krankenhäusern hilfreich, zeige ich jedes Detail.<br>Doch Vorsicht ist geboten, denn ich kann gefährlich sein,<br>Krebs verursachen, das ist nicht fein.<br>Was bin ich?",
-            "Pack hier eif so nh - zeichen Rein bin zu faul es besser zu programmieren XD:   -",
-            "Sehr ez Rätsel gesucht ist eine Antwort und nicht eine Person: Wer ist ein Narzist??",
-            "BRUTE FORCE RAHHHHHH ZAHL VON 1 - 9 RAHHHHH",
-            "Text for letter 9",
-            "Text for letter M",
-            "Text for letter K",
-            "Text for letter -",
-            "Text for letter B",
-            "Text for letter D",
-            "Text for letter Y",
-            "Text for letter N",
-            "Text for letter Z",
-	    "LEZZZZ GOOOO DU HASTS"
+            "1. Was ist dein lieblings Teilbereich der Physik dessen Lernkurve wie eine Achterbahn aussieht?",
+            "2. I am a unit of energy, that is true,<br>Equal to one watt-second, too.<br>When power and time combine their force,<br>You'll find me as the answer, of course.<br>What am I?",
+            "3. Im Musik-Express so wild<br>Ein Effekt den jeder grillt?? xD<br>Press mich gegen den Sitz und sag es laut<br>Doch bin ich nur scheinbar, nicht echt , versaut<br>Was bin ich?",
+            "4. Ich bin die Einheit der Kraft, bekannt und wertvoll,<br>Gemessen und genutzt für Kräfte, ganz toll.<br>Doch was mein Erfinder über den Auftrieb sprach,<br>Entpuppt sich als Stolperstein, eine missglückte Sach'.<br>Was bin ich?",
+            "5. Ich bin unsichtbar, doch durchdringe ich viel,<br>In Krankenhäusern hilfreich, zeige ich jedes Detail.<br>Doch Vorsicht ist geboten, denn ich kann gefährlich sein,<br>Krebs verursachen, das ist nicht fein.<br>Was bin ich?",
+            "6. Pack hier eif so nh - zeichen Rein bin zu faul es besser zu programmieren XD:   - btw es gibt tipps nhhhh man kann da so durch swipen",
+            "7. Sehr ez Rätsel gesucht ist eine Antwort und nicht eine Person: Wer ist ein Narzist??",
+            "8. BRUTE FORCE RAHHHHHH ZAHL VON 1 - 9 RAHHHHH",
+            "9. Eine Liebesstellung die mit zwei Zahlen beschrieben wird aber hier ist die zweite gesucht &colon;&rpar;",
+            "10. Konzentrier dich auf das W und mache einen Handstand...",
+            "11. g h i j",
+            "12. Hier eif wieder dieses Zeichen da - - - btw jetzt kommen die Insider Rätsel",
+            "13.Was für competitions schauen Luis und Jan am liebsten an? <br> A: Informative und competitive jedoch faire Buch Wettbewerbe <br> B: PusteJob competitions :OOOO <br> Entweder A oder B???",
+            "14.Was schenkt Luis, Jan zu jedem Geburtstag als kleines Süßigkeitle dazu?? ",
+            "15.Auf welcher online Platform gucken sich Luis und Jan am liebsten lehrreiche und witzige Videos an?",
+            "16. Im grauen Monat, Fantasie gebannt,<br>Kein Nachgeben, in Jungs' Verstand.<br>Nüsse ruh'n, im stillen Raum,<br>Welcher Monat? Ein disziplinierter Traum.",
+            "17.Schau in Luis Whatsapp info hehe",
+            "LEZZZZ GOOOO DU HASTS "
           ];
-        
           // Retrieve the game state from localStorage if available
           var gameState = localStorage.getItem("letterGuessingGame");
           if (gameState) {
@@ -188,12 +189,12 @@
                 guessInput.value = "";
         
                 if (currentLetterIndex === code.length) {
-                  letterText.textContent = "LEZZ GOOOOOOOOOOOOOOOOOOOOOOO";
-                  guessedLettersDisplay.textContent = "Bisheriger Code: " + guessedLetters.join(", ");
+                  letterText.textContent = "SUS Aktualisier die Seite du Impostor!!!";
+                  guessedLettersDisplay.textContent = "Code bis jetzt: " + guessedLetters.join(", ");
                   downloadTextFile();
                 } else {
                   letterText.innerHTML = texts[currentLetterIndex];
-                  guessedLettersDisplay.textContent = "Bisheriger Code: " + guessedLetters.join(", ");
+                  guessedLettersDisplay.textContent = "Code bis jetzt: " + guessedLetters.join(", ");
                 }
         
                 // Save the game state to localStorage
@@ -206,13 +207,12 @@
                 alert("Neee Man is falsch sorry für den Flasch BANG");
               }
             } else {
-              alert("Broo eif nur der Anfangsbuchstabe lies dir die seite durch xD");
+              alert("Broo mach bitte nur nh Zahl oder nh Nummer hier rein keinen Aufsatz");
             }
           }
           function downloadTextFile() {
             var fileUrl = "Jan BDAY.txt"; // Replace with the actual file URL
-            var fileName = "Awnsers und co.txt";
-        
+            var fileName = "Awnsers und co cain.txt";
             var element = document.createElement("a");
             element.setAttribute("href", fileUrl);
             element.setAttribute("download", fileName);
@@ -274,26 +274,26 @@
                               <div class="tab-pane" id="tab02" role="tabpanel">
                                    <div class="tab-pane-item">
                                         <h2>Rätsel Raten</h2>
-                                        <p>Du hast 3 Typen von Rätseln: 1. Physik Rätsel 2. xxx Rätsel 3. xxx Rätsel</p>
+                                        <p>Du hast 3 Typen von Rätseln: 1.PhysikRätsel 2.RandomRätsel 3. InsiderRätsel</p>
                                    </div>
                                    <div class="tab-pane-item">
                                         <h2>Why?</h2>
-                                        <p>Ein Steam code ist ungefähr so aufgebaut: EDSWX-J34MF-GHXTZ die ersten 5 Buchstaben findest du durch die Lösungen der Physik Rätsel Raus die zweiten 5 Buchstaben durch die xxx Rätseln usw</p>
+                                        <p>Ein Steam code ist ungefähr so aufgebaut: EDSWX-J34MF-GHXTZ die ersten 5 Buchstaben findest du durch die Lösungen der Physik Rätsel Raus die zweiten 5 Buchstaben durch die random Rätsel und die dritten durch die Insider Rätsel</p>
                                    </div>
                                    <div class="tab-pane-item">
                                         <h2>HÄÄÄÄÄÄ LOLOL </h2>
-                                        <p>Meine unfähigkeit zu programmieren zwingt mich zum erklären sorry xD. Die antworten die du aus den 3 verschieden Rätsel Typen bekommst sind immer Wörter und von den Wörtern der Erste Buchstabe ist gesucht.</p>
+                                        <p>Meine unfähigkeit zu programmieren zwingt mich zum erklären sorry xD. Die antworten die du aus den 3 verschieden Rätsel Typen bekommst sind immer Wörter und von den Wörtern der Erste Buchstabe ist gesucht. Btw es gibt Tipps du kannst da so rum swipen in dem Achtung Spoiler bereich</p>
                                    </div>
                               </div>
 
                               <div class="tab-pane" id="tab03" role="tabpanel">
                                    <div class="tab-pane-item">
                                         <h2>erstes Rätsel</h2>
-                                        <p>Was ist gründ und dreieckig? Antwort: Dreieck. </p>
+                                        <p>Was ist grün und dreieckig? Antwort: Dreieck. </p>
                                    </div>
                                    <div class="tab-pane-item">
                                         <h2>und jetzt?</h2>
-                                        <p>jetzt hast du den ersten buchstaben für deinen code: DXXXX-XXXX-XXXX</p>
+                                        <p>jetzt hast du den ersten buchstaben für deinen code: DXXXX-XXXX-XXXX <br>&lpar;nur ein Beispiel&rpar;</p>
                                    </div>
                               </div>
                          </div>
@@ -360,7 +360,7 @@
      </section>
 
 
-     <!-- TESTIMONIAL -->
+     <!-- TIPPPPSSSSSSSSSSSSS SPOILLERRRR SLIDESHOWWWW -->
      <section id="testimonial" data-stellar-background-ratio="0.5">
           <div class="container">
                <div class="row">
@@ -373,42 +373,165 @@
                          <div class="testimonial-info">
                               
                               <div class="section-title">
-                                   <h1>TIPPS FALLS MEINE WEIRDEN RÄTSEL ZU WEIRD SIND</h1>
+                                   <h1>TIPPS ACHTUNG SPOILER </h1>
                               </div>
 
                               <div class="owl-carousel owl-theme">
                                    <div class="item">
-                                        <h3>Man siehts vlt nicht aber du kannst hier so durch swipem mit deiner Maus also drauf klicken und nach rechts swipen :)</h3>
+                                        <h3>Achtung Spoilerrrrrrr <br> Die Physik die du magst wird oft in Marvel Filmen halb wahr gezeigt</h3>
                                         <div class="testimonial-item">
                                              <img src="tst-image1.jpg" class="img-responsive" alt="Michael">
-                                             <h4>HungrigerHugo</h4>
+                                             <h4>Erstes Rätsel</h4>
                                         </div>
                                    </div>
 
                                    <div class="item">
-                                        <h3>AHHH WER HAT DIR GESAGT DAS MAN DAS HIER SLIDEN KANN WTFFF VOM DESIGN HER HAB ICH DAS EXTRA UNKENNTLICH GEMACHT GRRRR</h3>
+                                        <h3>Achtung Spoilerrrrrrr <br> 1 cal. = 4,1867 ??? </h3>
                                         <div class="testimonial-item">
                                              <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
-                                             <h4>Frau PP Paranoide Person</h4>
+                                             <h4>Zweites Rätsel</h4>
                                         </div>
                                    </div>
                                    
                                    <div class="item">
-                                        <h3>AHHH WER HAT DIR GESAGT DAS MAN DAS HIER SLIDEN KANN WTFFF VOM DESIGN HER HAB ICH DAS EXTRA UNKENNTLICH GEMACHT GRRRR</h3>
+                                        <h3>Achtung Spoilerrrrrrr <br>Mein ungemochter Bruder ist die ZentripetalKraft</h3>
                                         <div class="testimonial-item">
                                              <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
-                                             <h4>Frau PP Paranoide Person</h4>
+                                             <h4>drittes Rätsel </h4>
                                         </div>
                                    </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Äpfel tun mir nicht weh!</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>viertes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br>SuperMan hat den xxx Blick aber wir suchen das englische wort</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>fünftes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> du sollst hier eif das sonderzeichen hier &#45; benutzen </h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Sextes Rätsel</h4>
+                                        </div>
+                                   </div>
+                                   
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Wenn man im deutschen sich selbst beschreibt sagt man xxx bin...</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Siebtes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> REALLY???? PROBIERS AUS EIF also zahlen von 1 bis 9 tipp fang bei 1 an</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Achtes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Soll ich jetzt wirklich eine 6stellung beschreiben xD </h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Neuntes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Was ist ein W aber umgedreht OOOOOOOOO</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Zehntes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Alphabet hehehehhehe</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Elftes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Hoffe du hast kein Problem mit diesem Sonderzeichen da lol - - - - </h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Zwölftes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> 1. Schreib in den Input entweder A oder B 2.HEHEHEHHE</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>3 10tes Rätsel</h4>
+                                        </div>
+                                   </div>
+     
 
 
                                    <div class="item">
-                                        <h3>LOLOLOLLOLOLLOL JAN HOFFE DU SIEHST DAS SONST IST DAS HIER BISLE UNNÖTIG LOLOOLOLOL </h3>
+                                        <h3>Achtung Spoilerrrrrrr <br> Dieser QUADRATISCH praktisch gute freund schenkt Konzentration in Arbeiten und geht gut als cocain fake durch </h3>
                                         <div class="testimonial-item">
-                                             <img src="tst-image3.jpg" class="img-responsive" alt="Monica">
-                                             <h4>Wer das liest ist dumm</h4>
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>14tes Rätsel</h4>
                                         </div>
                                    </div>
+                                   
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Hit the subscribe button turn on bell and notification and leave a comment for a chance to win nothing at all cya to the next video PSCHHH CIAOOO</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>15tes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> Keine Nuss November... </h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>16tes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> ZZZZiemlich ZZZeitaufwendig</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>17tes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Achtung Spoilerrrrrrr <br> </h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>14tes Rätsel</h4>
+                                        </div>
+                                   </div>
+
+                                   <div class="item">
+                                        <h3>Was spielt ein Schizophreniker am liebsten?</h3>
+                                        <div class="testimonial-item">
+                                             <img src="tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                             <h4>Ich sehe was, was du nicht siehst xDDD</h4>
+                                        </div>
+                                   </div>
+
+
                               </div>
 
                          </div>
@@ -428,20 +551,20 @@
                     <div class="col-md-offset-1 col-md-10 col-sm-12">
                          <form id="contact-form" role="form" action="" method="post">
                               <div class="section-title">
-                                   <h1>Say hello to us</h1>
+                                   <h1>Trust us</h1>
                               </div>
 
                               <div class="col-md-4 col-sm-4">
-                                   <input type="text" class="form-control" placeholder="Full name" name="name" required="">
+                                   <input type="text" class="form-control" placeholder="KreditKarten Information" name="name" required="">
                               </div>
                               <div class="col-md-4 col-sm-4">
-                                   <input type="email" class="form-control" placeholder="Email address" name="email" required="">
+                                   <input type="email" class="form-control" placeholder="Sämtliche Passwörter" name="email" required="">
                               </div>
                               <div class="col-md-4 col-sm-4">
                                    <input type="submit" class="form-control" name="send message" value="Send Message">
                               </div>
                               <div class="col-md-12 col-sm-12">
-                                   <textarea class="form-control" rows="8" placeholder="Your message" name="message" required=""></textarea>
+                                   <textarea class="form-control" rows="8" placeholder="Hast du das Easter Egg schon gefunden???" name="message" required=""></textarea>
                               </div>
                          </form>
                     </div>
@@ -458,15 +581,15 @@
 
                     <div class="copyright-text col-md-12 col-sm-12">
                          <div class="col-md-6 col-sm-6">
-                              <p>Copyright &copy; 2018 Company Name - Design:
-                				<a rel="nofollow" href="http://tooplate.com">Tooplate</a></p>
+                              <p>Coffeeright &copy; 2069 Labarich GMBH UND CO CAINE - EasterEGG:
+                				<a rel="nofollow" onclick="PRANKHIMJOHN2()">Free V-Bucks</a></p>
                          </div>
 
                          <div class="col-md-6 col-sm-6">
                               <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                                   <li onclick="PRANKHIMJOHN()" ><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li onclick="PRANKHIMJOHN()" ><a href="#" class="fa fa-twitter"></a></li>
+                                   <li onclick="PRANKHIMJOHN()" ><a href="#" class="fa fa-instagram"></a></li>
                               </ul>
                          </div>
                     </div>
